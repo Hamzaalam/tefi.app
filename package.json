@@ -8,11 +8,11 @@
     "start": "next start",
     "type-check": "tsc --pretty --noEmit",
     "format": "prettier --write .",
-    "lint": "npx eslint --ignore-pattern '/packages/*' . --ext ts --ext tsx --ext js ",
+    "lint": "npx eslint . --ext ts --ext tsx --ext js ",
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*.{ts}": [
+    "*.{ts,tsx} --ignore-pattern '/packages/*'": [
       "yarn lint",
       "yarn format"
     ]

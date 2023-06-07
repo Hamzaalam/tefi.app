@@ -3,9 +3,8 @@ name: Node.js Package
 on:
   push:
     branches:
-    - master
+      - master
 jobs:
-
   publish-gpr:
     runs-on: ubuntu-latest
     steps:
@@ -17,11 +16,11 @@ jobs:
           scope: '@contco'
       - run: npm ci
       - run: |
-            git config user.email ""
-            git config user.name "Publish Action"
+          git config user.email ""
+          git config user.name "Publish Action"
       - run: |
-            npm version patch
-            git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY"
+          npm version patch
+          git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY"
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

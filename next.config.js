@@ -2,13 +2,12 @@
 const runtimeCaching = require('next-pwa/cache');
 
 // `next-pwa` config should be passed here
-const withPWA = require("next-pwa")({
-  dest: "public",
+const withPWA = require('next-pwa')({
+  dest: 'public',
   register: true,
   runtimeCaching,
-  disable: process.env.NODE_ENV === "development",
+  disable: process.env.NODE_ENV === 'development',
 });
-
 
 const nextConfig = {
   reactStrictMode: true,
@@ -43,7 +42,6 @@ const nextConfig = {
   images: {
     domains: ['storage.googleapis.com'],
   },
-
 };
 
 // delete nextConfig.pwa;
