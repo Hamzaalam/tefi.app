@@ -28,7 +28,7 @@ const Sidebar: React.FC<Props> = ({ name }) => {
           justifyContent='center'
         >
           <Flex alignItems='center'>
-            <Icon svg={SunIcon}></Icon>
+            {/* <Icon svg={SunIcon}></Icon> */}
           </Flex>
         </Button>
       </Flex>

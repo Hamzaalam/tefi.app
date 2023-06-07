@@ -2,7 +2,11 @@
   "noImplicitAny": false,
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -17,9 +21,22 @@
     "incremental": true,
     "baseUrl": "./",
     "paths": {
-      "@terra-utilities/*": ["packages/terra-utilities/*"],
+      "@terra-utilities/*": [
+        "packages/terra-utilities/*"
+      ],
     },
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/Asset/dummy.js", "components/MirrorBorrowing", "packages/terra-utilities/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "components/Asset/dummy.js",
+    "components/MirrorBorrowing",
+    "packages/terra-utilities/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "packages",
+    "utils/useAccounts.ts"
+  ]
 }
