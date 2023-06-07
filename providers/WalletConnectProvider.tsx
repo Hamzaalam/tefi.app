@@ -1,6 +1,5 @@
 import { FC, ReactChildren, ReactChild, ReactNode } from 'react';
 import dynamic from 'next/dynamic';
-import { NetworkInfo } from '@terra-money/wallet-provider';
 import networks from '../utils/networks';
 
 const DynamicWalletProvider: any = dynamic(
@@ -10,6 +9,21 @@ const DynamicWalletProvider: any = dynamic(
     }),
   { ssr: false },
 );
+
+export interface NetworkInfo {
+  /** Network name (e.g. mainnet) */
+  name: string;
+  /** chainID (e.g. columbus-5) */
+  chainID: string;
+  /** lcd endpoint (e.g. https://lcd.terra.dev) */
+  lcd: string;
+  /** api endpoint (e.g. https://columbus-api.terra.dev) */
+  api?: string;
+  /** mantle endpoint (e.g. https://columbus-mantle.terra.dev) */
+  mantle?: string;
+  /** wallet connect ID (e.g. 2) */
+  walletconnectID?: number;
+}
 
 const walletConnectChainIds: Record<number, NetworkInfo> = {
   0: networks.testnet,
