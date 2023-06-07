@@ -12,7 +12,7 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*.{ts,tsx} --ignore-pattern '/packages/*'": [
+    "*.{ts,tsx}": [
       "yarn lint",
       "yarn format"
     ]
